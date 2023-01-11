@@ -1,0 +1,24 @@
+{% extends 'miblog/base.html' %}
+
+{% block contenido %}
+{% if user.is_authenticated %}
+    <a href="{% url 'miblog-crear' %}">Crear Post</a>
+    {% if user.avatar.imagen %}
+        <a href="{% url 'miblog-avatars-actualizar' user.avatar.id %}">Actualizar Avatar</a>
+    {% endif %}
+    <a href="{% url 'miblog-users-actualizar' user.id %}">Actualizar Profile</a>
+    <a href="{% url 'miblog-mensajes-listar' %}">Mensajes</a>
+{% endif %}
+<ul>
+{% for post in object_list %}
+    <li>
+        {{post.publicado_el}} - - {{post.titulo}} 
+        {% if user.is_superuser %}
+            <a href="{% url 'miblog-borrar' post.id %}">Borrar</a>
+            <a href="{% url 'miblog-actualizar' post.id %}">Actualizar</a>
+        {% endif %}
+        <a href="{% url 'miblog-detalle' post.id %}">Ver</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
