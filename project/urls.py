@@ -21,7 +21,7 @@ from django.views.generic import TemplateView
 from miblog.views import (index, PostDetalle, PostListar, 
                                PostCrear, PostBorrar, PostActualizar,
                                UserSignUp, UserLogin, UserLogout, 
-                               AvatarActualizar, UserActualizar, MensajeCrear, MensajeListar, MensajeDetalle, about )
+                               AvatarActualizar, UserActualizar, MensajeCrear, MensajeListar, MensajeDetalle, MensajeBorrar, about )
 from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [
@@ -39,6 +39,7 @@ urlpatterns = [
     path('miblog/users/<int:pk>/actualizar/', UserActualizar.as_view(), name="miblog-users-actualizar"),
     path('miblog/mensajes/crear/', MensajeCrear.as_view(), name="miblog-mensajes-crear"),
     path('miblog/mensajes/<int:pk>/detalle/', MensajeDetalle.as_view(), name="miblog-mensajes-detalle"),
+    path('miblog/mensajes/<int:pk>/borrar/', MensajeBorrar.as_view(), name="miblog-mensajes-borrar"),
     path('miblog/mensajes/listar/', MensajeListar.as_view(), name="miblog-mensajes-listar"),
     path('miblog/about', about, name="miblog-about"),
 

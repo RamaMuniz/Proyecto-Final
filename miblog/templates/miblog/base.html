@@ -28,7 +28,6 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'miblog-index' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'miblog-about' %}">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'miblog-mensajes-crear' %}">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'miblog-signup' %}">Registrarse</a></li>
                         {% if user.is_authenticated %}
                             <li class="nav-item"><a class="nav-link" href="{% url 'miblog-listar' %}">Admin Blog</a></li>
