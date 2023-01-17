@@ -1,0 +1,9 @@
+{% extends 'miblog/base.html' %}
+
+{% block contenido %}
+    <h1>{{mensaje.nombre}}</h1>
+    <h2>{{mensaje.email}}</h2>
+    <div>
+        {{mensaje.texto}}
+    </div>
+{% endblock %}
